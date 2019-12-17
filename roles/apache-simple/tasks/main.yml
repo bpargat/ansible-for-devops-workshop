@@ -2,9 +2,9 @@
 # tasks file for apache-simple
 - name: Ensure httpd packages are installed
   yum:
-    name: {{ item }}
+    name: "{{ item }}"
     state: present
-  with_items: {{ httpd_packages }}
+  with_items: "{{ httpd_packages }}"
   notify: restart-apache-service
 
 - name: Ensure site-enabled directory is created
